@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+typedef long long int    ll;
+using namespace std;
+ll get_fibonacci_last_digit_naive(int n) {
+    vector<ll> a(n + 1);
+    int i;
+    a[0] = 0;
+    a[1] = 1;
+    for (i = 2; i <= n; i++)
+        a[i] = (a[i - 1] % 10) + (a[i - 2] % 10);
+    return (a[n]%10);
+
+}
+
+int main() {
+    int n;
+    cin >> n;
+    
+    cout << get_fibonacci_last_digit_naive(n); 
+}
